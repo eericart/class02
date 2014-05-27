@@ -1,4 +1,4 @@
-require 'player'
+require_relative 'player.rb'
 class Team
   attr_reader :team_name
 
@@ -9,7 +9,7 @@ class Team
 
   def filter_by_position(position)
     # returns players in the given position
-    @players.find {|player| player.position = position }
+    @players.find {|player| player.position == position }
   end
 
 
