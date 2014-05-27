@@ -13,7 +13,7 @@ class Team
 
   def filter_by_position(position)
     # returns players in the given position
-    @players.find {|player| player.position == position }
+    @players.select {|player| player.position == position }
   end
 
 
@@ -22,6 +22,7 @@ class Team
   end
 
   def to_s
+    puts team_name
     @players.each {|player | puts player}
   end
 end
