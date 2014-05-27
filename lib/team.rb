@@ -7,6 +7,10 @@ class Team
     @players = []
   end
 
+  def remove_player(name)
+    @players.delete_if {|player| player.name == name}
+  end
+
   def filter_by_position(position)
     # returns players in the given position
     @players.find {|player| player.position == position }
