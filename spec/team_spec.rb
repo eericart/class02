@@ -1,0 +1,2 @@
+describe Team do
+end
