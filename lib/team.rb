@@ -1,6 +1,6 @@
 require_relative 'player.rb'
 class Team
-  attr_reader :team_name
+  attr_reader :team_name, :players
 
   def initialize(name)
     @team_name = name
