@@ -17,7 +17,7 @@ class Team
   end
 
   def add_player(name, position)
-    @players.push(Player.new(name,position))
+    @players.push(Player.new(name,position)) unless players.find {|player| player.name == name and player.position == position}
   end
 
   def to_s
