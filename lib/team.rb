@@ -16,7 +16,6 @@ class Team
     @players.select {|player| player.position == position }
   end
 
-
   def add_player(name, position)
     @players.push(Player.new(name,position))
   end
