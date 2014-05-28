@@ -29,8 +29,13 @@ describe Team do
 
  describe "#filter_by_position" do
     it "should returns list of player" do
+      found = @team.filter_by_position(22)
+      first_player = @team.players.first
+      expect(found.any?).to be_true
+      expect(found.first).to eql first_player
     end
     it "should returns empty array" do
+      expect(@team.filter_by_position(10).empty?).to be_true
     end
   end
 
