@@ -42,10 +42,14 @@ describe Team do
  describe "#remove_player" do
     context "with correct params" do
       it "should remove player" do
+        @team.remove_player "Josue"
+        expect(@team.players.count).to eql 0
       end
     end
     context "with incorrect params" do
       it "should return empty array" do
+        remove_players = @team.remove_player "Ernest"
+        expect(remove_players.empty?).to be_true
       end
     end
   end
