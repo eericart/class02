@@ -5,17 +5,24 @@ describe Team do
 
   subject { @team}
   it { should respond_to(:team_name, :filter_by_position, :add_player, :to_s)}
-  it { should_not respond_to(:players) }
 
  describe "#add_player" do
     context "with correct params" do
       it "should add a player" do
         @team.add_player "Josue", 22
-        expect {@team.players.count}.to eql 1
+        expect(@team.players.count).to eql 1
       end
     end
     context "with incorrect params" do
-      it "should not add a player" do
+      it "should  throw an error" do
+        expect {@team.add_player "Ernesto"}.to raise_error ArgumentError
+      end
+    end
+    context "with existing player" do
+      it "should not add player" do
+        num_players = @team.players.count
+        @team.add_player "Josue", 22
+        expect(@team.players.count).to eql num_players
       end
     end
   end
