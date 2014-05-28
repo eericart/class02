@@ -6,6 +6,6 @@ class Player
   end
 
   def to_s
-   "#{@name}-#{@position}"
+   "#{@name} - #{@position}"
   end
 end
