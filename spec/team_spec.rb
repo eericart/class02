@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe Team do
    before { @team = Team.new "Equipo" }
 
@@ -6,7 +7,7 @@ describe Team do
   it { should respond_to(:team_name, :filter_by_position, :add_player, :to_s)}
   it { should_not respond_to(:players) }
 
-  discrebe "#add_player" do
+ describe "#add_player" do
     context "with correct params" do
       it "should add a player" do
       end
@@ -17,14 +18,14 @@ describe Team do
     end
   end
 
-  discrebe "#filter_by_position" do
+ describe "#filter_by_position" do
     it "should returns list of player" do
     end
     it "should returns empty array" do
     end
   end
 
-  discrebe "#remove_player" do
+ describe "#remove_player" do
     context "with correct params" do
       it "should remove player" do
       end
