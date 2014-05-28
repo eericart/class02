@@ -10,6 +10,8 @@ describe Team do
  describe "#add_player" do
     context "with correct params" do
       it "should add a player" do
+        @team.add_player "Josue", 22
+        expect {@team.players.count}.to eql 1
       end
     end
     context "with incorrect params" do
